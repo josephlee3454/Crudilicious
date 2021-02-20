@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using crud.Models
+@model List<Dish>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <header>
+            <h1>Welcom to CRUDELICIOUS</h1>
+        </header>
+        Checkout some recent dishes! <a href="/new">link</a>
+    </header>
+    <div>
+        <table>
+            <thead>
+                <th>Dishes</th>
+            </thead>
+            <tbody>
+            @foreach(Dish item in @Model)
+            {
+                <tr>
+                    <td>@item.Name </td>
+                    <td>@item.Chef </td>
+                    <td>@item.Tastyness </td>
+                    <td>@item.Calories </td>
+                    <td>@item.UpdatedAt </td>
+
+                    <td><a href="edit/@item.DishId">Edit</a></td>
+                    <td><a href="delDish/@item.DishId">Delete Dish</a></td>
+                    <td><a href="dish/@item.DishId">Display Dish</a></td>
+                </tr>
+                
+            }
+
+            </tbody>
+        </table>
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+
+@using crud.Models
+@model Dish
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="CreateDish" method="post">
+        <div class="col-md-6">
+          <label asp-for="Name" for="Name" class="form-label">Name of Dish</label>
+          <input type="text" asp-for="Name" class="form-control" >
+        </div>
+        <div class="col-md-6">
+          <label asp-for="Chef"  class="form-label">Chef</label>
+          <input type="text" asp-for="Chef" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label asp-for="Tastyness"  class="form-label">Tasty</label>
+          <select asp-for="Tastyness"  class="form-select">
+            <option value = "1">1</option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "5">5</option>
+
+            
+            
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label  asp-for="Calories" class="form-label">Calories</label>
+          <input type="text" asp-for="Calories" class="form-control">
+        </div>
+        <div class="col-12">
+          <input type="submit" value="submit" class="btn btn-primary"/>
+        </div>
+      </form>
+</body>
+</html>
